@@ -19,6 +19,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile
+    ports:
+      - "40026:40026"
     networks:
       - proxy
 

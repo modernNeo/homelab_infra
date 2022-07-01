@@ -6,7 +6,5 @@ COPY config.yaml /config.yaml
 
 COPY credentials.json /credentials.json
 
-RUN sysctl -w net.core.rmem_max=2500000
-
 #CMD["sh"]
 CMD ["tunnel", "--config", "/config.yaml", "--no-autoupdate", "run"]

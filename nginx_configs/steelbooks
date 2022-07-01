@@ -1,5 +1,5 @@
 upstream steelbooks {
-  server 127.0.0.1:8000 fail_timeout=0;
+  server test_steelbooksatbestbuy_website:8000 fail_timeout=0;
 }
 
 # server {

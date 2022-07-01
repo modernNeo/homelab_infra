@@ -1,4 +1,9 @@
 
+# Setup Public Hostname
+
+![Screenshot](.screenshots/public_hostname_config.png)
+
+`nginx:80` -> `<key associated with nginx docker app in the docker-compose.yml>:<port listed in nginx_configs/steelbooks>`
 
 # Generate .Env file
 

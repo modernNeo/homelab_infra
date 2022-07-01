@@ -16,9 +16,11 @@ services:
   cloudflared:
     container_name: cloudflared
     restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.cloudflared
     networks:
       - proxy
-    command: tunnel --config /home/nonroot/.cloudflared/config.yml run UUID #Replace UUID with your actual UUID
 
 networks:
   proxy:

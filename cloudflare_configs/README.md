@@ -17,15 +17,8 @@ curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/relea
 
 cloudflared service install ${TOKEN}
 cloudflared tunnel login
+cloudflared tunnel list
 cloudflared tunnel token --cred-file credentials.json <Tunnel UUID>
-```
-copy the credentials.json file to cloudflare_configs
-
-# Generate Config.yaml file
-
- 1. Populate `config.yaml` with
-```shell
-url: http://nginx:8000
-tunnel: <Tunnel UUID>
-credentials-file: /credentials.json
+exit
+docker cp ecstatic_northcutt:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
 ```

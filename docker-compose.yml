@@ -12,7 +12,7 @@ services:
     networks:
     - proxy
     - nextCloud_network
-    - steelBooks_network
+    - test_steelbooksatbestbuy_network
   cloudflared:
     container_name: cloudflared
     restart: unless-stopped
@@ -25,6 +25,7 @@ services:
 networks:
   proxy:
     driver: bridge
-    external: true
   nextCloud_network:
+    driver: bridge
   test_steelbooksatbestbuy_network:
+    driver: bridge

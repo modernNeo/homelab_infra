@@ -4,7 +4,9 @@ ENV TUNNEL_TOKEN=TUNNEL_TOKEN
 
 COPY config.yaml /config.yaml
 
-COPY 885aa5c1-7648-47aa-b462-3204735b6409.json /885aa5c1-7648-47aa-b462-3204735b6409.json
+COPY credentials.json /credentials.json
+
+RUN sysctl -w net.core.rmem_max=2500000
 
 #CMD["sh"]
 CMD ["tunnel", "--config", "/config.yaml", "--no-autoupdate", "run"]

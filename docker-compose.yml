@@ -5,7 +5,7 @@ services:
     env_file: cloudflare.env
     build:
       context: .
-      dockerfile: Dockerfiles/Dockerfile.nginx
+      dockerfile: Dockerfiles/Nginx.dockerfile
     ports:
       - "80:8000"
       - "443:443"
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     build:
       context: .
-      dockerfile: Dockerfiles/Dockerfile.cloudflared
+      dockerfile: Dockerfiles/Cloudflared.dockerfile
     networks:
       - proxy
 

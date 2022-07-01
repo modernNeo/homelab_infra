@@ -12,7 +12,6 @@ services:
   cloudflared:
     container_name: cloudflared
     restart: unless-stopped
-    env_file: cloudflare.env
     build:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile
@@ -22,7 +21,10 @@ services:
 networks:
   proxy:
     driver: bridge
+    name: proxy
   nextCloud_network:
+    name: nextCloud_network
     driver: bridge
   test_steelbooksatbestbuy_network:
     driver: bridge
+    name: test_steelbooksatbestbuy_network

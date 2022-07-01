@@ -2,18 +2,15 @@ upstream steelbooks {
   server test_steelbooksatbestbuy_website:8000 fail_timeout=0;
 }
 
-# server {
-#  listen 80;
-#  server_name steelbooks.getthemachine.net;
-#  return 301 https://$host$request_uri;
-#}
+server {
+ listen 80;
+ server_name steelbooks.getthemachine.net;
+ return 301 https://$host$request_uri;
+}
 
 server {
-  listen 80; # ssl;
+  listen 443 ssl;
   server_name steelbooks.getthemachine.net;
-
-#  ssl_certificate /etc/letsencrypt/live/steelbooks.getthemachine.net/fullchain.pem;
-#  ssl_certificate_key /etc/letsencrypt/live/steelbooks.getthemachine.net/privkey.pem;
 
   location / {
     proxy_set_header        Host $host:$server_port;

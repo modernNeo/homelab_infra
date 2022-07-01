@@ -1,4 +1,4 @@
-FROM cloudflare/cloudflared:2022.1.3-amd64
+FROM cloudflare/cloudflared:2022.6.3-amd64
 
 ENV TUNNEL_TOKEN=TUNNEL_TOKEN
 

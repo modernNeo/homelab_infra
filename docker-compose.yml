@@ -12,7 +12,7 @@ services:
   cloudflared:
     container_name: cloudflared
     restart: unless-stopped
-    env_file: cloudflare.env
+    env_file: cloudflare_configs/cloudflare.env
     build:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile

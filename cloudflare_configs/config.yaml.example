@@ -1,0 +1,3 @@
+url: http://nginx:8000
+tunnel: 42deef02-d0b3-4e5c-8ef3-63e1d06d0d8c
+credentials-file: /credentials.json

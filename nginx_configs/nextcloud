@@ -2,14 +2,14 @@ upstream nextcloud {
   server 127.0.0.1:8081 fail_timeout=0;
 }
 
-server {
-  listen 80;
-  server_name nextcloud.getthemachine.net;
-  return 301 https://$host$request_uri;
-}
+# server {
+#  listen 80;
+#  server_name nextcloud.getthemachine.net;
+#  return 301 https://$host$request_uri;
+#}
 
 server {
-  listen 443; # ssl;
+  listen 80; # ssl;
   server_name nextcloud.getthemachine.net;
 
 #  ssl_certificate /etc/letsencrypt/live/nextcloud.getthemachine.net/fullchain.pem;

@@ -1,5 +1,6 @@
 
 [Cloudflare Zero Trust](https://dash.teams.cloudflare.com) 
+Documentation: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/
 
 # Setup Public Hostname
 
@@ -29,3 +30,6 @@ cloudflared tunnel token --cred-file credentials.json <Tunnel UUID>
 exit
 docker cp ecstatic_northcutt:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
 ```
+
+cloudflared tunnel create bob
+cloudflared tunnel route dns bob steelbooks

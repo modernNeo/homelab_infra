@@ -11,8 +11,7 @@ services:
     - test_steelbooksatbestbuy_network
   cloudflared:
     container_name: cloudflared
-    restart: unless-stopped
-#    env_file: cloudflare_configs/cloudflare.env run the tunnel setup on the dashboard
+#    env_file: cloudflare_configs/cloudflare.env if the tunnel was setup via the UI
     build:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile

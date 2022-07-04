@@ -1,4 +1,6 @@
 
+[Cloudflare Zero Trust](https://dash.teams.cloudflare.com) 
+
 # Setup Public Hostname
 
 ![Screenshot](.screenshots/public_hostname_config.png)

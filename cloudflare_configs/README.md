@@ -13,8 +13,13 @@
 
 >Adapted from https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/#set-up-a-tunnel-locally-cli-setup
 ```shell
+docker exec -it ubuntu_container bash
+cloudflared tunnel login
 cloudflared tunnel create <tunnel_name>
 cloudflared tunnel route dns <tunnel_name> <hostname>
+exit
+docker cp ubuntu_container:/root/.cloudflared/52e3ce80-0e31-4745-aa83-83c2490df284.json cloudflare_configs/credentials.json
+chmod o+x cloudflare_configs/credentials.json
 ```
 
 ## Getting credentials for tunnel generated from UI
@@ -27,9 +32,9 @@ apt-get update
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared.deb && 
 
 cloudflared service install ${TOKEN}
-cloudflared tunnel login
 cloudflared tunnel list
 cloudflared tunnel token --cred-file credentials.json <Tunnel UUID>
 exit
 docker cp ubuntu_container:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
+cloudflare_configs/credentials.json
 ```

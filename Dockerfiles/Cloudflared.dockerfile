@@ -1,7 +1,9 @@
 FROM cloudflare/cloudflared:2022.6.3-amd64
 
-COPY cloudflare_configs/credentials.json /go/src/github.com/cloudflare/cloudflared/credentials.json
+WORKDIR /etc/cloudflared/
 
-COPY cloudflare_configs/config.yaml /etc/cloudflared/config.yml
+COPY cloudflare_configs/credentials.json credentials.json
+
+COPY cloudflare_configs/config.yaml config.yml
 
 CMD ["tunnel", "--no-autoupdate", "run"]

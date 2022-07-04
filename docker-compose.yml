@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  nginx:
+  nginx_app:
     container_name: nginx_service
     build:
       context: .

@@ -1,5 +1,5 @@
 tunnel: 3b686b85-3e91-43c2-85c5-b2968992512c
-credentials-file: /etc/.cloudflared/credentials.json
+credentials-file: /etc/cloudflared/credentials.json
 
 ingress:
  - hostname: steelbooks.modernneo.com.getthemachine.net

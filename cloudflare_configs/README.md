@@ -1,5 +1,5 @@
 
-[Access Tunnels Resources](https://dash.teams.cloudflare.com) 
+[Access Tunnels Resources](https://dash.teams.cloudflare.com)   
 [Documentation for Setting up Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
 
 ## Generate .Env file
@@ -21,7 +21,6 @@ cloudflared tunnel route dns <tunnel_name> <hostname>
 >Adapted from 
 > * https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/#set-up-a-tunnel-locally-cli-setup
 > * https://github.com/cloudflare/cloudflared/issues/645#issuecomment-1127393680
-Run from inside docker container ubuntu
 ```shell
 docker exec -it ubuntu_container bash
 apt-get update

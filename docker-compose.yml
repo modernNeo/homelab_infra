@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile
     volumes:
-      - ./cloudflare_configs/config:/root/.cloudflared
+      - ./cloudflare_configs/config:/etc/.cloudflared
     networks:
       - proxy
 

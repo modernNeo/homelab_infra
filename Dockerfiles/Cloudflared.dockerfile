@@ -1,6 +1,6 @@
 FROM cloudflare/cloudflared:2022.6.3-amd64
 
-COPY cloudflare_configs/credentials.json /credentials.json
+COPY cloudflare_configs/credentials.json /home/nonroot/credentials.json
 
 COPY cloudflare_configs/config.yaml /etc/cloudflared/config.yml
 

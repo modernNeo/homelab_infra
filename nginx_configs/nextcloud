@@ -4,7 +4,7 @@ upstream nextcloud {
 
 server {
     listen 80;
-    server_name nextcloud.getthemachine.net;
+    server_name nextcloud.modernneo.com;
 
     location / {
         proxy_set_header        Host $host:$server_port;

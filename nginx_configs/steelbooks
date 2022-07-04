@@ -4,7 +4,7 @@ upstream steelbooks {
 
 server {
     listen 80;
-    server_name steelbooks.getthemachine.net;
+    server_name steelbooks.modernneo.com;
 
     location / {
         proxy_set_header        Host $host:$server_port;

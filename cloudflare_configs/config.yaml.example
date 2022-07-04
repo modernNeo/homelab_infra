@@ -5,5 +5,5 @@ warp-routing:
 
 ingress:
  - hostname: <hostname>
-   service: http://<docker container name>:80
+   service: http://<docker container name>:<port that service is running on>
  - service: http_status:404

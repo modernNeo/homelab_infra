@@ -1,22 +1,26 @@
 
-[Cloudflare Zero Trust](https://dash.teams.cloudflare.com) 
-Documentation: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/
+[Access Tunnels Resources](https://dash.teams.cloudflare.com) 
+[Documentation for Setting up Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
 
-# Setup Public Hostname
-
-![Screenshot](.screenshots/public_hostname_config.png)
-
-`nginx:80` -> `<key associated with nginx docker app in the docker-compose.yml>:<port listed in nginx_configs/steelbooks>`
-
-# Generate .Env file
+## Generate .Env file
 
  1. go to https://dash.teams.cloudflare.com
  2. `Access` -> `Tunnels` -> Click on `Configure` for tunnel 
  3. get the token from the command `sudo cloudflared service install <TOKEN>` on the website
  4. Place token in `cloudflare.env`
 
-# Generate Credentials file
+## Generate Tunnel from cli
 
+>Adapted from https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/#set-up-a-tunnel-locally-cli-setup
+```shell
+cloudflared tunnel create <tunnel_name>
+cloudflared tunnel route dns <tunnel_name> <hostname>
+```
+
+## Getting credentials for tunnel generated from UI
+>Adapted from 
+> * https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/#set-up-a-tunnel-locally-cli-setup
+> * https://github.com/cloudflare/cloudflared/issues/645#issuecomment-1127393680
 Run from inside docker container ubuntu
 ```shell
 docker exec -it ubuntu_container bash
@@ -28,8 +32,5 @@ cloudflared tunnel login
 cloudflared tunnel list
 cloudflared tunnel token --cred-file credentials.json <Tunnel UUID>
 exit
-docker cp ecstatic_northcutt:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
+docker cp ubuntu_container:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
 ```
-
-cloudflared tunnel create bob
-cloudflared tunnel route dns bob steelbooks

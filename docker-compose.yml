@@ -8,7 +8,7 @@ services:
     networks:
     - proxy
     - nextCloud_network
-    - test_steelbooksatbestbuy_network
+    - steelbooksatbestbuy_network
   cloudflared:
     container_name: cloudflared
 #    env_file: cloudflare_configs/cloudflare.env if the tunnel was setup via the UI
@@ -25,6 +25,6 @@ networks:
   nextCloud_network:
     name: nextCloud_network
     driver: bridge
-  test_steelbooksatbestbuy_network:
+  steelbooksatbestbuy_network:
     driver: bridge
-    name: test_steelbooksatbestbuy_network
+    name: steelbooksatbestbuy_network

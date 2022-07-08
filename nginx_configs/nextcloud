@@ -1,5 +1,5 @@
 upstream nextcloud {
-    server nextcloud-app:8080 fail_timeout=0;
+    server nextcloud_app:8080 fail_timeout=0;
     # https://github.com/modernNeo/next_cloud
 }
 

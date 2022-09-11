@@ -4,6 +4,6 @@ warp-routing:
   enabled: false
 
 ingress:
- - hostname: <hostname>
-   service: http://<docker container name>:<port that service is running on>
+ - hostname: <fqdn>
+   service: http://<docker container name>:<port that service is running on in its own container>
  - service: http_status:404

@@ -1,44 +1,42 @@
 version: "3.8"
 services:
+
   cloudflared:
     container_name: cloudflared
 #    env_file: cloudflare_configs/cloudflare.env if the tunnel was setup via the UI
     build:
       context: .
-      dockerfile: Dockerfiles/Cloudflared.dockerfile
+      dockerfile: Cloudflared.dockerfile
     networks:
       - nextcloud_network
       - steelbooksatbestbuy_network
 
-
   nextcloud_postgres:
       image: postgres:alpine
+      env_file:
+          - nextcloud.env
       restart: unless-stopped
       volumes:
           - nextcloud_postgres_db:/var/lib/postgresql/data
-      environment:
-          - POSTGRES_PASSWORD=/run/secrets/postgres_db_password
-          - POSTGRES_DB=nextcloud_postgres_db
-          - POSTGRES_USER=nextcloud_postgres_db_admin
       container_name: nextcloud_postgres
       networks:
           - nextcloud_network
+
   nextcloud_app:
       image: nextcloud:apache
+      env_file:
+          - nextcloud.env
       restart: unless-stopped
       volumes:
           - nextcloud:/var/www/html
       environment:
-          - POSTGRES_DB=nextcloud_postgres_db
-          - POSTGRES_USER=nextcloud_postgres_db_admin
-          - POSTGRES_PASSWORD=/run/secrets/postgres_db_password
           - POSTGRES_HOST=nextcloud_postgres
       depends_on:
           - nextcloud_postgres
       networks:
           - nextcloud_network
       ports:
-          - 8888:80
+          - 8888:80 #so the instance can be accessed without the use of cloudflare tunnel in the LAN
       container_name: nextcloud_app
 
 volumes:

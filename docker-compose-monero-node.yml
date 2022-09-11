@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+ monero_node:
+   image: monero
+   restart: unless-stopped
+   volumes:
+     - /var/services/homes/jace/monero/chain:/home/monero/.bitmonero
+     - /var/services/homes/jace/monero/wallet:/wallet
+   ports:
+     - 18080:18080
+   container_name: monero_node

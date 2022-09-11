@@ -7,5 +7,5 @@ services:
      - /var/services/homes/jace/monero/chain:/home/monero/.bitmonero
      - /var/services/homes/jace/monero/wallet:/wallet
    ports:
-     - 18080:18080
+     - 18081:18081
    container_name: monero_node

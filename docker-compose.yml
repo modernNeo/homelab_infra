@@ -1,14 +1,5 @@
 version: "3.8"
 services:
-  nginx_app:
-    container_name: nginx_service
-    build:
-      context: .
-      dockerfile: Dockerfiles/Nginx.dockerfile
-    networks:
-    - proxy
-    - nextcloud_network
-    - steelbooksatbestbuy_network
   cloudflared:
     container_name: cloudflared
 #    env_file: cloudflare_configs/cloudflare.env if the tunnel was setup via the UI
@@ -16,7 +7,8 @@ services:
       context: .
       dockerfile: Dockerfiles/Cloudflared.dockerfile
     networks:
-      - proxy
+      - nextcloud_network
+      - steelbooksatbestbuy_network
 
 
   nextcloud_postgres:
@@ -45,6 +37,8 @@ services:
           - nextcloud_postgres
       networks:
           - nextcloud_network
+      ports:
+          - 8888:80
       container_name: nextcloud_app
 
 volumes:
@@ -54,12 +48,9 @@ volumes:
         name: nextcloud_postgres_db
 
 networks:
-  proxy:
-    driver: bridge
-    name: proxy
   nextcloud_network:
     name: nextcloud_network
     driver: bridge
   steelbooksatbestbuy_network:
-    driver: bridge
     name: steelbooksatbestbuy_network
+    driver: bridge

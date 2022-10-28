@@ -10,6 +10,7 @@ services:
     networks:
       - nextcloud_network
       - steelbooksatbestbuy_network
+      - cineplex_network
 
   nextcloud_postgres:
       image: postgres:alpine
@@ -51,4 +52,7 @@ networks:
     driver: bridge
   steelbooksatbestbuy_network:
     name: steelbooksatbestbuy_network
+    driver: bridge
+  cineplex_network:
+    name: cineplex_network
     driver: bridge

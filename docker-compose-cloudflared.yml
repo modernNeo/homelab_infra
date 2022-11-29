@@ -47,6 +47,7 @@ services:
       dockerfile: Jenkins.Dockerfile
     networks:
       - jenkins_network
+    container_name: jenkins
 
 volumes:
     nextcloud:

@@ -40,3 +40,30 @@ exit
 docker cp ubuntu_container:/credentials.json /var/services/homes/jace/private_network/cloudflare_configs/credentials.json
 cloudflare_configs/credentials.json
 ```
+
+## Add a new service
+
+```shell
+https://dev.to/netk/getting-started-with-docker-running-an-ubuntu-image-4lk9
+https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-useful-terms/#default-cloudflared-directory
+docker run --rm --name ubuntu_container -i -t -v /var/services/homes/jace/Git/private_network/cloudflare_configs:/root/.cloudflared  ubuntu /bin/bash
+
+apt-get update && apt-get install -y wget
+
+# https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide/local/#1-download-and-install-cloudflared
+wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared-linux-amd64.deb
+
+#https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/routing-to-tunnel/dns/
+cloudflared tunnel route dns modernneo <app_name>.modernneo.com
+
+exit
+
+docker rm -f cloudflared
+docker images
+docker image rm <cloudflared images>
+docker-compose -f docker-compose-cloudflared.yml up -d
+
+
+https://community.cloudflare.com/t/cloudflare-tunnel-give-404-error/335272/2
+docker exec -it cloudflared cloudflared tunnel ingress rule https://<app_name>.modernneo.com
+```

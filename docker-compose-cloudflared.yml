@@ -11,6 +11,7 @@ services:
       - nextcloud_network
       - steelbooksatbestbuy_network
       - cineplex_network
+      - jenkins_network
 
   nextcloud_postgres:
       image: postgres:alpine
@@ -40,6 +41,13 @@ services:
           - 8888:80 #so the instance can be accessed without the use of cloudflare tunnel in the LAN
       container_name: nextcloud_app
 
+  jenkins:
+    build:
+      context: .
+      dockerfile: Jenkins.Dockerfile
+    networks:
+      - jenkins_network
+
 volumes:
     nextcloud:
         name: nextcloud_volume
@@ -55,4 +63,7 @@ networks:
     driver: bridge
   cineplex_network:
     name: cineplex_network
+    driver: bridge
+  jenkins_network:
+    name: jenkins_network
     driver: bridge

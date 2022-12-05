@@ -12,6 +12,7 @@ services:
       - steelbooksatbestbuy_network
       - cineplex_network
       - jenkins_network
+      - finance_site_network
 
   nextcloud_postgres:
       image: postgres:alpine
@@ -67,4 +68,7 @@ networks:
     driver: bridge
   jenkins_network:
     name: jenkins_network
+    driver: bridge
+  finance_site_network:
+    name: finance_site_network
     driver: bridge

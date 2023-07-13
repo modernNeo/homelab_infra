@@ -13,34 +13,7 @@ services:
       - cineplex_network
       - jenkins_network
       - finance_site_network
-
-  nextcloud_postgres:
-      image: postgres:alpine
-      env_file:
-          - nextcloud.env
-      restart: unless-stopped
-      volumes:
-          - nextcloud_postgres_db:/var/lib/postgresql/data
-      container_name: nextcloud_postgres
-      networks:
-          - nextcloud_network
-
-  nextcloud_app:
-      image: nextcloud:apache
-      env_file:
-          - nextcloud.env
-      restart: unless-stopped
-      volumes:
-          - nextcloud:/var/www/html
-      environment:
-          - POSTGRES_HOST=nextcloud_postgres
-      depends_on:
-          - nextcloud_postgres
-      networks:
-          - nextcloud_network
-      ports:
-          - 8888:80 #so the instance can be accessed without the use of cloudflare tunnel in the LAN
-      container_name: nextcloud_app
+      - job_site_network
 
   jenkins:
     build:
@@ -75,4 +48,7 @@ networks:
     driver: bridge
   finance_site_network:
     name: finance_site_network
+    driver: bridge
+  job_site_network:
+    name: job_site_network
     driver: bridge

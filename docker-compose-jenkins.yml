@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Jenkins.Dockerfile
+    networks:
+      - jenkins_network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/bin/docker
+      - /usr/local/bin/docker-compose:/bin/docker-compose
+    container_name: jenkins
+
+networks:
+  jenkins_network:
+    name: jenkins_network
+    driver: bridge

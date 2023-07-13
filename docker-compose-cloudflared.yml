@@ -15,24 +15,6 @@ services:
       - finance_site_network
       - job_site_network
 
-  jenkins:
-    build:
-      context: .
-      dockerfile: Jenkins.Dockerfile
-    networks:
-      - jenkins_network
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/local/bin/docker:/bin/docker
-      - /usr/local/bin/docker-compose:/bin/docker-compose
-    container_name: jenkins
-
-volumes:
-    nextcloud:
-        name: nextcloud_volume
-    nextcloud_postgres_db:
-        name: nextcloud_postgres_db
-
 networks:
   nextcloud_network:
     name: nextcloud_network

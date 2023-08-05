@@ -10,6 +10,11 @@ services:
       container_name: nextcloud_postgres
       networks:
           - nextcloud_network
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
 
   nextcloud_app:
       image: nextcloud:apache

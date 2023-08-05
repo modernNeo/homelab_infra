@@ -9,3 +9,8 @@ services:
    ports:
      - 18081:18081
    container_name: monero_node
+   logging:
+     driver: "json-file"
+     options:
+       max-size: "200k"
+       max-file: "10"

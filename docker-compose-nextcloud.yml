@@ -38,8 +38,8 @@ services:
           - nextcloud:/var/www/html
       environment:
           - POSTGRES_HOST=nextcloud_postgres
-      depends_on:
-          - nextcloud_postgres
+#      depends_on:
+#          - nextcloud_postgres
       networks:
           - nextcloud_network
       ports:

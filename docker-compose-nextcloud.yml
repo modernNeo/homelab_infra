@@ -17,7 +17,7 @@ services:
           max-file: "10"
 
   nextcloud_app:
-      image: nextcloud:apache
+      image: nextcloud:27.0.1-apache
       env_file:
           - nextcloud.env
       restart: unless-stopped

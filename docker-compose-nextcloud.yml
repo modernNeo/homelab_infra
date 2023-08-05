@@ -16,6 +16,19 @@ services:
           max-size: "200k"
           max-file: "10"
 
+  nextcloud_redis:
+    image: redis
+    restart: unless-stopped
+    container_name: nextcloud_redis
+    networks:
+      - nextcloud_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+
   nextcloud_app:
       image: nextcloud:27.0.1-apache
       env_file:
@@ -32,6 +45,7 @@ services:
       ports:
           - 8888:80 #so the instance can be accessed without the use of cloudflare tunnel in the LAN
       container_name: nextcloud_app
+
 volumes:
     nextcloud:
         name: nextcloud_volume

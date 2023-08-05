@@ -18,6 +18,8 @@ services:
 
   nextcloud_redis:
     image: redis
+    sysctls:
+      - vm.overcommit_memory=1
     restart: unless-stopped
     container_name: nextcloud_redis
     networks:

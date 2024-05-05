@@ -30,7 +30,7 @@ services:
 
 
   nextcloud_app:
-      image: nextcloud:28.0.1-apache
+      image: nextcloud:28.0.5-apache
       env_file:
           - nextcloud.env
       restart: unless-stopped

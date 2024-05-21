@@ -9,18 +9,13 @@ services:
       dockerfile: Cloudflared.dockerfile
     networks:
       - nextcloud_network
-      - steelbooksatbestbuy_network
       - cineplex_network
       - jenkins_network
       - finance_site_network
-      - jobs_site_network
 
 networks:
   nextcloud_network:
     name: nextcloud_network
-    driver: bridge
-  steelbooksatbestbuy_network:
-    name: steelbooksatbestbuy_network
     driver: bridge
   cineplex_network:
     name: cineplex_network
@@ -30,7 +25,4 @@ networks:
     driver: bridge
   finance_site_network:
     name: finance_site_network
-    driver: bridge
-  jobs_site_network:
-    name: jobs_site_network
     driver: bridge

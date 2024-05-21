@@ -27,6 +27,7 @@
     - [Install Instructions](https://docs.docker.com/engine/install/debian/)
   - [xrdp](https://github.com/neutrinolabs/xrdp)
     - [Install Instructions](https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04)
+    - [Configure to use with Cinnamon Desktop Environment](https://askubuntu.com/a/289672)
 ### Hardware
  - [Intel NUC 12 Pro Kit](https://www.newegg.ca/rnuc12wski70000-intel-nuc-12-pro-wall-street-canyon-i7-slim/p/N82E16856102364?Item=N82E16856102364)
  - [Crucial 64GB Kit (32GBx2)](https://www.newegg.ca/crucial-64gb-260-pin-ddr4-so-dimm/p/N82E16820156242?Item=9SIADGEEVT2508)

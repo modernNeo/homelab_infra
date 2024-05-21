@@ -9,7 +9,7 @@ services:
     container_name: nextcloud_postgres
     networks:
         - nextcloud_network
-    logging:
+    logging: # adapted from https://www.howtogeek.com/devops/how-to-clear-logs-of-running-docker-containers/#setting-up-log-rotation
       driver: "json-file"
       options:
         max-size: "200k"

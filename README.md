@@ -90,6 +90,9 @@ docker compose -f docker-compose-nextcloud.yml up -d
 https://nextcloud.com/install/#install-clients
 
 If you are attemping to sync any files > 100MB using Cloudflare [as this guide does], you will see alot of error with `Connection closed` in the client due to [this error](https://help.nextcloud.com/t/if-youre-seeing-connection-closed-errors-uploading-large-files-100mb-while-using-cloudflare-we-have-a-fix/137510). That can be fixed with: https://github.com/nextcloud/desktop/issues/4278#issuecomment-1099587102
+
+If you see the iOS app get stuck on login, that can be fixed with https://github.com/nextcloud/ios/issues/960#issuecomment-1454850238
+
 ## Jenkins
 `docker compose -f docker-compose-jenkins.yml up -d`
 # [Build Monero Image](https://github.com/modernNeo/monero#installing-monero-from-a-package)

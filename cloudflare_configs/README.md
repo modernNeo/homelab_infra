@@ -61,7 +61,7 @@ exit
 docker rm -f cloudflared
 docker images
 docker image rm <cloudflared images>
-docker-compose -f docker-compose-cloudflared.yml up -d
+docker compose -f docker-compose-cloudflared.yml up -d
 
 
 https://community.cloudflare.com/t/cloudflare-tunnel-give-404-error/335272/2

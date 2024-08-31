@@ -46,7 +46,7 @@ cloudflare_configs/credentials.json
 ```shell
 https://dev.to/netk/getting-started-with-docker-running-an-ubuntu-image-4lk9
 https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-useful-terms/#default-cloudflared-directory
-docker run --rm --name ubuntu_container -i -t -v /var/services/homes/jace/Git/private_network/cloudflare_configs:/root/.cloudflared  ubuntu /bin/bash
+docker run --rm --name ubuntu_container -i -t -v /home/jace/Git/modernneo.com_infra/cloudflare_configs:/root/.cloudflared  ubuntu /bin/bash
 
 apt-get update && apt-get install -y wget
 

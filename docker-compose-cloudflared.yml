@@ -12,6 +12,8 @@ services:
       - cineplex_network
       - jenkins_network
       - finance_site_network
+      - jobs_site_network
+      - podcasts_site_network
 
 networks:
   nextcloud_network:
@@ -25,4 +27,10 @@ networks:
     driver: bridge
   finance_site_network:
     name: finance_site_network
+    driver: bridge
+  jobs_site_network:
+    name: jobs_site_network
+    driver: bridge
+  podcasts_site_network:
+    name: podcasts_site_network
     driver: bridge

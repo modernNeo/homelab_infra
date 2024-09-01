@@ -3,7 +3,11 @@ services:
     image: postgres:alpine
     env_file:
         - nextcloud.env
-    restart: unless-stopped
+    deploy: # https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        window: 120s
     volumes:
         - /home/jace/nas_mount/docker_data/nextcloud/postgres_data:/var/lib/postgresql/data
     container_name: nextcloud_postgres
@@ -29,7 +33,11 @@ services:
     image: nextcloud:29.0.0-apache
     env_file:
         - nextcloud.env
-    restart: unless-stopped
+    deploy: # https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        window: 120s
     volumes:
         - /home/jace/nas_mount/docker_data/nextcloud/data:/var/www/html
   #      depends_on:

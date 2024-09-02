@@ -30,7 +30,7 @@ services:
         max-size: "200k"
         max-file: "10"
   nextcloud_app:
-    image: nextcloud:29.0.0-apache
+    image: nextcloud:29.0.5-apache
     env_file:
         - nextcloud.env
     deploy: # https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy

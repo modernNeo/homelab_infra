@@ -95,4 +95,22 @@ If you see the iOS app get stuck on login, that can be fixed with https://github
 
 ## Jenkins
 `docker compose -f docker-compose-jenkins.yml up -d`
-# [Build Monero Image](https://github.com/modernNeo/monero#installing-monero-from-a-package)
+# Monero
+## [Build Monero Image](https://github.com/modernNeo/monero#installing-monero-from-a-package)
+```bash
+git clone https://github.com/monero-project/monero.git
+cd monero
+docker build -t monero .
+cd ~/Git/modernneo.com_infra/
+docker compose -f docker-compose-monero-node.yml up -d
+```
+
+## Install Monero-GUI
+
+https://www.getmonero.org/downloads/#gui
+
+ * Add App Icon
+   * https://github.com/monero-project/monero-gui/issues/1312#issuecomment-381192656
+   * https://github.com/monero-project/monero-gui/blob/master/images/appicons/128x128.png
+
+ * Adding UDev Rules to allow the ledger wallet to be recognized by system: https://github.com/LedgerHQ/udev-rules

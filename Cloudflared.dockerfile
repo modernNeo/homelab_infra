@@ -1,4 +1,4 @@
-FROM cloudflare/cloudflared:2022.6.3-amd64
+FROM cloudflare/cloudflared:2025.2.1-amd64
 
 #COPYs are not necessary if the tunnel was created via the UI
 COPY cloudflare_configs/credentials.json /etc/cloudflared/credentials.json

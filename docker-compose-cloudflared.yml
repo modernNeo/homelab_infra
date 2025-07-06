@@ -14,6 +14,7 @@ services:
       - finance_site_network
       - jobs_site_network
       - podcasts_site_network
+      - git_slack_pr_bot_network
 
 networks:
   nextcloud_network:
@@ -33,4 +34,7 @@ networks:
     driver: bridge
   podcasts_site_network:
     name: podcasts_site_network
+    driver: bridge
+  git_slack_pr_bot_network:
+    name: git_slack_pr_bot_network
     driver: bridge

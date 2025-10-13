@@ -15,6 +15,7 @@ services:
       - jobs_site_network
       - podcasts_site_network
       - git_slack_pr_bot_network
+      - atlassion_endpoint_stubs_network
 
 networks:
   nextcloud_network:
@@ -37,4 +38,7 @@ networks:
     driver: bridge
   git_slack_pr_bot_network:
     name: git_slack_pr_bot_network
+    driver: bridge
+  atlassion_endpoint_stubs_network:
+    name: atlassion_endpoint_stubs_network
     driver: bridge

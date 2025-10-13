@@ -62,6 +62,7 @@ docker rm -f cloudflared
 docker images
 docker image rm <cloudflared images>
 # update cloudflare_configs/config.yaml to add the new ingress rule
+# update docker-compose-cloudflared.yml to add the new network
 docker compose -f docker-compose-cloudflared.yml up -d
 
 

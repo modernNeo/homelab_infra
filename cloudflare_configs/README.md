@@ -61,6 +61,7 @@ exit
 docker rm -f cloudflared
 docker images
 docker image rm <cloudflared images>
+# update cloudflare_configs/config.yaml to add the new ingress rule
 docker compose -f docker-compose-cloudflared.yml up -d
 
 

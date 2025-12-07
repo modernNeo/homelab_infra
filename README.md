@@ -83,6 +83,7 @@ NEXTCLOUD_TRUSTED_DOMAINS=<nextcloud FQDN specified in config.yaml> linux.local:
 OVERWRITEPROTOCOL=https #necessary to get NextCloud Notes App Working
 POSTGRES_HOST=nextcloud_postgres
 REDIS_HOST=nextcloud_redis
+TRASHBIN_RETENTION=auto, <number of days to keep a file in trash>
 
 docker compose -f docker-compose-nextcloud.yml up -d
 ```

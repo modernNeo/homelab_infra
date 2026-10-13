@@ -94,6 +94,15 @@ If you are attemping to sync any files > 100MB using Cloudflare [as this guide d
 
 If you see the iOS app get stuck on login, that can be fixed with https://github.com/nextcloud/ios/issues/960#issuecomment-1454850238
 
+### Manually Empty Recycle Bin
+
+```bash
+# https://help.nextcloud.com/t/run-occ-files-scan-all-automatically-in-docker-container/100429
+https://docs.nextcloud.com/server/stable/admin_manual/configuration_files/trashbin_configuration.html#background-job
+
+docker exec -ti --user www-data nextcloud-app /var/www/html/occ <command>
+```
+
 ## Jenkins
 `docker compose -f docker-compose-jenkins.yml up -d`
 # Monero

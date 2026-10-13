@@ -87,6 +87,7 @@ TRASHBIN_RETENTION=auto, <number of days to keep a file in trash>
 
 docker compose -f docker-compose-nextcloud.yml up -d
 ```
+
 ### Setup Desktop Clients for File Syncing
 https://nextcloud.com/install/#install-clients
 

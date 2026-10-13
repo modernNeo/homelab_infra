@@ -45,7 +45,7 @@ services:
     networks:
         - nextcloud_network
     ports:
-        - 8888:80 #so the instance can be accessed without the use of cloudflare tunnel in the LAN
+      - "6002:80"
     container_name: nextcloud_app
     logging:
       driver: "json-file"
